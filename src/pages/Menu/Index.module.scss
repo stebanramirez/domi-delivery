@@ -1,0 +1,46 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contenido {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.lateral {
+  width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.platos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.mensaje,
+.vacio {
+  padding: 40px;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  .lateral {
+    width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from '../components/Shared/Layout/Index'
 import Home from '../pages/Home/Index'
+import Menu from '../pages/Menu/Index'
 import Login from '../pages/Login/Index'
 import Cart from '../pages/Cart/Index'
 import Orders from '../pages/Orders/Index'
@@ -16,6 +17,7 @@ function AppRoutes() {
         {/* Públicas */}
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/menu" element={<Menu />} />
 
         {/* Privadas: solo con sesión iniciada */}
         <Route element={<UserRoutes />}>

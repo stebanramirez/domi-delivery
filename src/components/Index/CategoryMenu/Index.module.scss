@@ -1,0 +1,42 @@
+.titulo {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.lista,
+.sub {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub {
+  padding-left: 16px;
+}
+
+.item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: #f4e4d4;
+  }
+}
+
+.activo {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--accent);
+  }
+}
