@@ -1,0 +1,77 @@
+.page {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 64px 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  input {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font: inherit;
+
+    &:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+  }
+
+  button {
+    margin-top: 12px;
+    padding: 12px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--brand);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.error {
+  color: #b42318;
+  font-size: 14px;
+  margin: 0;
+}
+
+.aviso {
+  color: #067647;
+  font-size: 14px;
+  margin: 0;
+}
