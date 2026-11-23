@@ -1,0 +1,109 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nota {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.boton {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pedido {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+.fecha {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.estado {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fde8d8;
+  color: var(--brand);
+}
+
+.preparando {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.en_camino {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.entregado {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.cancelado {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+}
+
+.totales {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
