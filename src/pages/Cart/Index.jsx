@@ -76,6 +76,7 @@ function Cart() {
           <strong>{formatearPrecio(total)}</strong>
         </div>
         <p className={styles.nota}>El costo de envío se calcula según tu zona de entrega.</p>
+        <Link to="/checkout" className={styles.finalizar}>Finalizar pedido</Link>
       </div>
     </main>
   )

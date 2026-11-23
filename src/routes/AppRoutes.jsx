@@ -7,6 +7,7 @@ import Login from '../pages/Login/Index'
 import Menu from '../pages/Menu/Index'
 import Cart from '../pages/Cart/Index'
 import Zones from '../pages/Zones/Index'
+import Checkout from '../pages/Checkout/Index'
 import Orders from '../pages/Orders/Index'
 import Dashboard from '../pages/Admin/Dashboard/Index'
 import NotFound from '../pages/NotFound/Index'
@@ -24,6 +25,7 @@ function AppRoutes() {
 
         {/* Rutas privadas: usuario con sesión */}
         <Route element={<UserRoutes />}>
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/pedidos" element={<Orders />} />
         </Route>
 
