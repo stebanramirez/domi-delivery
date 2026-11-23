@@ -1,63 +1,117 @@
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 16px 32px;
+.navbar {
   background: #fff;
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .logo {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 24px;
-  color: var(--brand);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .links {
   display: flex;
-  gap: 24px;
+  gap: 8px;
   flex: 1;
+  flex-wrap: wrap;
 }
 
 .link {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
   font-weight: 500;
-  color: var(--muted);
 
   &:hover {
-    color: var(--ink);
+    background: var(--bg);
   }
 }
 
-.active {
+.activo {
+  background: #fde8d8;
   color: var(--brand);
-  font-weight: 600;
 }
 
-.right {
+.derecha {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-.nombre {
-  font-size: 14px;
-  color: var(--muted);
+.carrito {
+  position: relative;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    background: var(--bg);
+  }
 }
 
-.boton {
-  padding: 10px 18px;
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  background: transparent;
-  color: var(--brand);
+.contador {
+  margin-left: 8px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nombre {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.salir,
+.ingresar {
+  padding: 8px 16px;
+  border-radius: 999px;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+}
 
-  &:hover {
-    background: var(--accent);
-    color: #fff;
+.salir {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.ingresar {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 860px) {
+  .contenido {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .links {
+    order: 3;
+    width: 100%;
   }
 }
