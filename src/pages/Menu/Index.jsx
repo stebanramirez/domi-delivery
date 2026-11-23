@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useMenu } from '../../hooks/useMenu'
+import { useCart } from '../../context/CartContext'
 import SearchBox from '../../components/Index/SearchBox/Index'
 import CategoryMenu from '../../components/Index/CategoryMenu/Index'
 import DishCard from '../../components/Index/DishCard/Index'
@@ -10,6 +11,7 @@ function Menu() {
   const [searchParams, setSearchParams] = useSearchParams()
   const categoryId = searchParams.get('categoria')
   const [query, setQuery] = useState('')
+  const { add } = useCart()
 
   const { loading, error, tree, suggestions, filtered } = useMenu(query, categoryId)
 
@@ -41,7 +43,7 @@ function Menu() {
           {filtered.length === 0 ? (
             <p className={styles.vacio}>No encontramos platos con esa búsqueda.</p>
           ) : (
-            filtered.map((plato) => <DishCard key={plato.id} dish={plato} />)
+            filtered.map((plato) => <DishCard key={plato.id} dish={plato} onAdd={add} />)
           )}
         </section>
       </div>

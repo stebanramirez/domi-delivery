@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useAuth } from '../../../context/AuthContext'
+import { useCart } from '../../../context/CartContext'
 import styles from './Index.module.scss'
 
 function claseLink({ isActive }) {
@@ -8,6 +9,7 @@ function claseLink({ isActive }) {
 
 function Navbar() {
   const { user, profile, isAdmin, signOut } = useAuth()
+  const { count } = useCart()
 
   return (
     <header className={styles.nav}>
@@ -21,6 +23,9 @@ function Navbar() {
       </nav>
 
       <div className={styles.right}>
+        <Link to="/carrito" className={styles.boton}>
+          Carrito{count > 0 && ` (${count})`}
+        </Link>
         {user ? (
           <>
             <span className={styles.nombre}>{profile?.full_name || user.email}</span>

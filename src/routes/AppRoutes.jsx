@@ -18,10 +18,10 @@ function AppRoutes() {
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/carrito" element={<Cart />} />
 
         {/* Privadas: solo con sesión iniciada */}
         <Route element={<UserRoutes />}>
-          <Route path="/carrito" element={<Cart />} />
           <Route path="/pedidos" element={<Orders />} />
         </Route>
 
