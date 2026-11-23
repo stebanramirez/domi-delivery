@@ -15,6 +15,7 @@ function Navbar() {
 
       <nav className={styles.links}>
         <NavLink to="/" end className={claseLink}>Inicio</NavLink>
+        <NavLink to="/menu" className={claseLink}>Menú</NavLink>
         {user && <NavLink to="/pedidos" className={claseLink}>Mis pedidos</NavLink>}
         {isAdmin && <NavLink to="/admin" className={claseLink}>Administración</NavLink>}
       </nav>
