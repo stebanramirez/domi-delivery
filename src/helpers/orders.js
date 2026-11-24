@@ -6,6 +6,9 @@ export const ESTADOS = {
   cancelado: 'Cancelado',
 }
 
+// Orden en que avanza un pedido
+export const FLUJO = ['recibido', 'preparando', 'en_camino', 'entregado']
+
 export function formatearFecha(iso) {
   return new Intl.DateTimeFormat('es-CO', {
     dateStyle: 'medium',

@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/Index'
 import Zones from '../pages/Zones/Index'
 import Checkout from '../pages/Checkout/Index'
 import Orders from '../pages/Orders/Index'
+import Tracking from '../pages/Tracking/Index'
 import Dashboard from '../pages/Admin/Dashboard/Index'
 import NotFound from '../pages/NotFound/Index'
 
@@ -27,6 +28,7 @@ function AppRoutes() {
         <Route element={<UserRoutes />}>
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/pedidos" element={<Orders />} />
+          <Route path="/pedidos/:id" element={<Tracking />} />
         </Route>
 
         {/* Rutas privadas: solo administrador */}
