@@ -12,6 +12,7 @@ import Orders from '../pages/Orders/Index'
 import Tracking from '../pages/Tracking/Index'
 import Dashboard from '../pages/Admin/Dashboard/Index'
 import AdminOrders from '../pages/Admin/Orders/Index'
+import AdminDishes from '../pages/Admin/Dishes/Index'
 import NotFound from '../pages/NotFound/Index'
 
 function AppRoutes() {
@@ -36,6 +37,7 @@ function AppRoutes() {
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/pedidos" element={<AdminOrders />} />
+          <Route path="/admin/platos" element={<AdminDishes />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

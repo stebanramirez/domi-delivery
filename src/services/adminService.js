@@ -36,3 +36,33 @@ export function subscribeToOrders(onChange) {
     supabase.removeChannel(channel)
   }
 }
+
+// Todos los platos, incluidos los ocultos
+export async function getAllDishes() {
+  const { data, error } = await supabase.from('dishes').select('*').order('name')
+  if (error) throw error
+  return data
+}
+
+export async function createDish(campos) {
+  const { error } = await supabase.from('dishes').insert({ ...campos, times_ordered: 0 })
+  if (error) throw error
+}
+
+export async function updateDish(id, campos) {
+  const { error } = await supabase.from('dishes').update(campos).eq('id', id)
+  if (error) throw error
+}
+
+// Sube la foto al Storage y devuelve su dirección pública
+export async function uploadDishImage(archivo) {
+  const extension = archivo.name.split('.').pop().toLowerCase()
+  const ruta = `${crypto.randomUUID()}.${extension}`
+
+  const { error } = await supabase.storage
+    .from('dishes')
+    .upload(ruta, archivo, { contentType: archivo.type, cacheControl: '3600' })
+  if (error) throw error
+
+  return supabase.storage.from('dishes').getPublicUrl(ruta).data.publicUrl
+}
