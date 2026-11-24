@@ -1,0 +1,171 @@
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(43, 29, 20, 0.6);
+  backdrop-filter: blur(4px);
+  animation: aparecer 0.18s ease;
+}
+
+.modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  animation: subir 0.22s ease;
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.foto {
+  position: relative;
+  min-height: 380px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.difuminada {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px);
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+.principal {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sinFoto {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--muted);
+  background: #f4e4d4;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 36px 28px 28px;
+
+  h2 {
+    font-size: 1.7rem;
+    color: var(--ink);
+  }
+}
+
+.popular {
+  align-self: flex-start;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #ffe9d6;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.descripcion {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.pie {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 16px;
+}
+
+.precio {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.agregar {
+  border: 0;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
+
+  &:hover {
+    background: var(--brand);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@media (max-width: 720px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+
+  .foto {
+    min-height: 260px;
+  }
+
+  .info {
+    padding: 22px 20px 22px;
+  }
+}
