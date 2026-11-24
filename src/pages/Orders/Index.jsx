@@ -74,6 +74,8 @@ function Orders() {
             <span>Envío {formatearPrecio(o.shipping)}</span>
             <strong>Total {formatearPrecio(o.total)}</strong>
           </div>
+
+          <Link to={`/pedidos/${o.id}`} className={styles.seguir}>Seguir pedido y chat</Link>
         </article>
       ))}
     </main>
