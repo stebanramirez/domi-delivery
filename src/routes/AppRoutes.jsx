@@ -11,6 +11,7 @@ import Checkout from '../pages/Checkout/Index'
 import Orders from '../pages/Orders/Index'
 import Tracking from '../pages/Tracking/Index'
 import Dashboard from '../pages/Admin/Dashboard/Index'
+import AdminOrders from '../pages/Admin/Orders/Index'
 import NotFound from '../pages/NotFound/Index'
 
 function AppRoutes() {
@@ -34,6 +35,7 @@ function AppRoutes() {
         {/* Rutas privadas: solo administrador */}
         <Route element={<AdminRoutes />}>
           <Route path="/admin" element={<Dashboard />} />
+          <Route path="/admin/pedidos" element={<AdminOrders />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
