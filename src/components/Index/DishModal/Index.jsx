@@ -1,9 +1,12 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
 import { formatearPrecio } from '../../../helpers/format'
 import styles from './Index.module.scss'
 
 function DishModal({ dish, onClose, onAdd }) {
+  const navigate = useNavigate()
+
   // Esc cierra la ventana y mientras está abierta la página de atrás no se mueve
   useEffect(() => {
     const alTeclear = (e) => {
@@ -19,9 +22,11 @@ function DishModal({ dish, onClose, onAdd }) {
     }
   }, [onClose])
 
+  // Agrega el plato, cierra la ventana y lleva al carrito
   const agregar = () => {
     onAdd(dish)
     onClose()
+    navigate('/carrito')
   }
 
   // createPortal dibuja la ventana directamente en body, fuera de la tarjeta,
