@@ -1,0 +1,71 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 16px;
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: 3rem;
+    color: var(--brand);
+  }
+
+  p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.principal,
+.secundario {
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.principal {
+  background: var(--accent);
+  color: #fff;
+}
+
+.secundario {
+  background: #fff;
+  color: var(--brand);
+  border: 1px solid var(--line);
+}
+
+.top {
+  margin-top: 24px;
+
+  h2 {
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.nota {
+  color: var(--muted);
+}
+
+.error {
+  color: #b91c1c;
+}
