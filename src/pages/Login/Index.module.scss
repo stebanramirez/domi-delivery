@@ -75,3 +75,37 @@
   font-size: 14px;
   margin: 0;
 }
+.form .campoClave {
+  position: relative;
+}
+
+.form .campoClave input {
+  width: 100%;
+  padding-right: 52px;
+}
+
+.form .campoClave .verClave {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 36px;
+  height: 36px;
+  min-height: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  box-shadow: none;
+  transform: none;
+}
+
+.form .campoClave .verClave:hover {
+  background: var(--brand-tint, #fff0e6);
+  color: var(--brand);
+}
